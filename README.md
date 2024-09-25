@@ -20,3 +20,5 @@ kubectl get ro -n <namespace>
 kubectl argo rollouts get rollout <rollout-name> -n <namespace>
 kubectl argo rollouts promote <rollout-name> -n <namespace>
 ```
+![image](https://github.com/user-attachments/assets/48a46798-4000-4cb7-82a5-4f7e07f2acdb)
+![image](https://github.com/user-attachments/assets/6a7386bc-0c22-4d72-bdcd-81115905e8a2)
