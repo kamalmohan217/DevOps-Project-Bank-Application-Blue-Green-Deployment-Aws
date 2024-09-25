@@ -1,0 +1,21 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: bankapp-ingress
+  namespace: bankapp
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: bankapp.singhritesh85.com
+    http:
+      paths:
+      - path: /
+        backend:
+          service:
+            name: bankapp-folo-active
+            port:
+              number: 80
+        pathType: Prefix
