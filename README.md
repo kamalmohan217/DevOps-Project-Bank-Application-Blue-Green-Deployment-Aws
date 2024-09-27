@@ -6,7 +6,7 @@
 
 ![image](https://github.com/user-attachments/assets/0c90595a-eb50-4e42-99df-e024643ab516)
 
-![image](https://github.com/user-attachments/assets/7c2c7ee0-d8d3-4714-ae36-db9630875927)
+![image](https://github.com/user-attachments/assets/391fe386-b4fd-49b8-8dc5-2b8045509bb2)
 
 
 Installation of SonarQube-Scanner, Nexus Artifacts Uploader and pipeline utility step plugin as shown in the screenshot attached below.
