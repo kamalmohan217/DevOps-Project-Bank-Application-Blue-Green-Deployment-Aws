@@ -18,7 +18,7 @@ pipeline{
         stage("Clone-Code"){
             steps{
                 cleanWs()
-                checkout scmGit(branches: [[name: '${COMMIT_ID}']], extensions: [], userRemoteConfigs: [[credentialsId: 'github-cred', url: 'https://github.com/singhritesh85/Bank-App.git']])
+                checkout scmGit(branches: [[name: '${COMMIT_ID}']], extensions: [], userRemoteConfigs: [[credentialsId: 'github-cred', url: 'https://github.com/kamalmohan217/Bank-App.git']])
             }
         }
         stage("SonarQube-Analysis"){
@@ -58,7 +58,7 @@ pipeline{
         stage("Deployment"){
             steps{
                 sh 'argocd login argocd.singhritesh85.com --username admin --password Admin@123 --skip-test-tls  --grpc-web'
-                sh 'argocd app create bankapp --project default --repo https://github.com/singhritesh85/helm-repo-for-Blue-Green-Deployment.git --path ./folo --dest-namespace bankapp --dest-server https://kubernetes.default.svc --helm-set service.port=80 --helm-set image.repository=${REPO_NAME} --helm-set image.tag=${TAG_NAME} --helm-set replicaCount=1 --upsert'
+                sh 'argocd app create bankapp --project default --repo https://github.com/kamalmohan217/helm-repo-for-Blue-Green-Deployment.git --path ./folo --dest-namespace bankapp --dest-server https://kubernetes.default.svc --helm-set service.port=80 --helm-set image.repository=${REPO_NAME} --helm-set image.tag=${TAG_NAME} --helm-set replicaCount=1 --upsert'
                 sh 'argocd app sync bankapp'
             }
         }
