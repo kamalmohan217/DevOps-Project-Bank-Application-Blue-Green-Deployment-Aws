@@ -94,6 +94,8 @@ After Running the Jenkins Job the screenshot for SonarQube, Nexus and ArgoCD is 
 ![image](https://github.com/user-attachments/assets/1136b042-c059-472b-a26f-85654c212b0e)
 ![image](https://github.com/user-attachments/assets/17e28cd4-08e2-42cf-9046-016cce56772d)
 
+The screenshot for two jenkins job is as shown below.
+![image](https://github.com/user-attachments/assets/d6103aa1-6bdc-4ce2-aca5-a869c8e35139)
 
 Install Argo Rollout Controller
 ```
@@ -114,6 +116,30 @@ kubectl get ro -n <namespace>
 kubectl argo rollouts get rollout <rollout-name> -n <namespace>
 kubectl argo rollouts promote <rollout-name> -n <namespace>
 ```
-![image](https://github.com/user-attachments/assets/48a46798-4000-4cb7-82a5-4f7e07f2acdb)
+
+Entry for Route53 is as shown in the screenshot attached below.
+![image](https://github.com/user-attachments/assets/21a54569-7798-4da0-bf46-982783a4548b)
+
+We can access the Bank Application for the first time after running the jenkins job as shown in the screenshot attached below.
+![image](https://github.com/user-attachments/assets/6e0ef5d4-f93f-41cf-95f9-aebc20b102af)
+![image](https://github.com/user-attachments/assets/d7876d8c-a996-4325-8d13-8786d0532f41)
+
+As per the requirement some changes has been done in the Application's login page (in the login.html file) and the bank name has been changed from Goldencat to GoldenDuck as a part of the new release.
+For new release to get implemented the Jenkins Job has been run and as we can there are two service and pods for active and preview. The preview to get implemented first of all I check whether it is working properly or not. To do so I changed the service type of kubernetes from ClusterIP to LoadBalancer as shown in the screenshot attached below.
+![image](https://github.com/user-attachments/assets/8d2eb926-66a2-44df-b0f9-4d1f36615b28)
+
+I checked Bank Application is working properly as shown in the screenshot attached below.
+![image](https://github.com/user-attachments/assets/aadbdbd2-4b7d-4b6e-ba66-427ad16dcb1a)
+
+After checking make the kubernetes service type as ClusterIP as shown in the screenshot attached below.
+![image](https://github.com/user-attachments/assets/60dd57eb-4718-46e3-b5ff-7b428fcfbed4)
+
+Finally promote the rollout to make the changes as Active.
 ![image](https://github.com/user-attachments/assets/6a7386bc-0c22-4d72-bdcd-81115905e8a2)
+
+![image](https://github.com/user-attachments/assets/48a46798-4000-4cb7-82a5-4f7e07f2acdb)
 ![image](https://github.com/user-attachments/assets/d7e390ec-332f-4927-99e9-ee759107d8da)
+
+Access the Bank Application as shown in the screenshot attached below.
+![image](https://github.com/user-attachments/assets/fced8338-6286-40a6-9af8-b0caa8a627c7)
+![image](https://github.com/user-attachments/assets/de0e376d-4520-4dca-9123-aa99f42cac9b)
